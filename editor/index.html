@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>SOCKET BASED EDITOR</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <h1>EDITOR</h1>
+
+  <div id='article'>
+    <section>
+      <div contenteditable="true">
+        <h2 class=>Title</h2>
+      </div>
+    </section>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io();
+
+    // Creates a new p instead of div when enter is pressed
+    document.execCommand('defaultParagraphSeparator', false, 'p');
+
+    var article = document.getElementById("article");
+    var articleHTML = article.innerHTML;
+
+    article.addEventListener('keypress', function(ev) {
+      if (ev.keyCode == 49) {
+        document.execCommand("formatBlock", false, "h2");
+      } else if (ev.keyCode == 50) {
+        document.execCommand("formatBlock", false, "h3");
+      } else if (ev.keyCode == 51) {
+        document.execCommand("formatBlock", false, "p");
+      }
+      // console.log(ev.keyCode);
+    });
+
+    setInterval(function() {
+      if (article.innerHTML != articleHTML) {
+        articleHTML = article.innerHTML;
+        // console.log(articleHTML);
+        socket.emit('save', article.innerHTML);
+      }
+
+    }, 2000);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{lang}}" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>{{title}}</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    <div class="article" contenteditable="true">
+      <h1 class="article-title">{{title}}</h1>
+      {{#if subtitle}}
+      <h3>{{subtitle}}</h3>
+      {{/if}}
+      <div class="article-content">
+        {{#each contents}}
+        {{#if text}}
+        <p>{{content}}</p>
+        {{/if}}
+        {{#if img}}
+        <img class="article-img" src="{{content}}">
+        {{/if}}
+        {{/each}}
+      </div>
+    </div>
+  </main>
+  <footer class='article-footer'>
+    {{author}}, {{date}}
+  </footer>
+</body>
+
+</html>

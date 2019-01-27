@@ -1,0 +1,24 @@
+{
+  "lang": "en",
+  "title": "Lopsum",
+  "subtitle": "lopsum sub",
+  "contents": [{
+      "text": true,
+      "content": "Integer nibh nisi, finibus in molestie ultrices, maximus velquam. In aliquam dapibus lacus, nec efficitur lectus congue non. Morbi condimentum erat et magna hendrerit, sed dictum ipsum finibus. In quis vehicula velit, at consequat lorem. Quisque malesuada id eros nec pulvinar. Nullam rutrum, purus sed scelerisque aliquet, leo felis auctor tellus, vel laoreet justo sem eu velit. Nunc scelerisque rutrum mauris eu cursus. Aliquam non est nec leo convallis rhoncus. In sodale efficitur nunc a dapibus. Vivamus et tincidunt metus. Sed ut consequat turpis. Sed vel dictum purus. Phasellus at dui purus."
+    },
+    {
+      "text": true,
+      "content": "SALUT test paragraph 2"
+    },
+    {
+      "img": true,
+      "content": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7d/Lenna_%28test_image%29.png/220px-Lenna_%28test_image%29.png"
+    },
+    {
+      "text": true,
+      "content": "WHATEVER"
+    }
+  ],
+  "author": "Simon Petit",
+  "date": "today"
+}
