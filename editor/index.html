@@ -9,10 +9,10 @@
 <body>
   <h1>EDITOR</h1>
 
-  <div id='article'>
-    <section>
-      <div contenteditable="true">
-        <h2 class=>Title</h2>
+  <div>
+    <section id='article'>
+      <div contenteditable="true" >
+        <h2>Title</h2>
       </div>
     </section>
   </div>
@@ -41,7 +41,6 @@
     setInterval(function() {
       if (article.innerHTML != articleHTML) {
         articleHTML = article.innerHTML;
-        // console.log(articleHTML);
         socket.emit('save', article.innerHTML);
       }
 
