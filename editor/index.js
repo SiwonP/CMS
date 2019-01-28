@@ -2,8 +2,9 @@ const express = require('express');
 const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
-const handlebars = require('handlebars');
-const mongoose = require('mongoose');
+// const handlebars = require('handlebars');
+// const mongoose = require('mongoose');
+const parser = require('node-html-parser');
 
 app.use(express.static('public'));
 
@@ -21,6 +22,13 @@ io.on('connection', (socket) => {
 
   socket.on('save', (html) => {
     console.log(html);
+    var struct = parser.parse(html);
+    var nodes = struct.firstChild.childNodes;
+    nodes.forEach((node)=>{
+      if (node.nodeType == 1) {
+        console.log(node);
+      }
+    })
   });
 
 });
